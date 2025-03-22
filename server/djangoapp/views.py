@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.http import JsonResponse
@@ -19,7 +18,9 @@ def get_cars(request):
     if count == 0:
         initiate()
     car_models = CarModel.objects.select_related("car_make")
-    cars = [{"CarModel": car.name, "CarMake": car.car_make.name} for car in car_models]
+    cars = [
+        {"CarModel": car.name, "CarMake": car.car_make.name} for car in car_models
+    ]
     return JsonResponse({"CarModels": cars})
 
 
@@ -29,7 +30,7 @@ def login_user(request):
     data = json.loads(request.body)
     username = data["userName"]
     password = data["password"]
-    
+
     # Authenticate user
     user = authenticate(username=username, password=password)
     response_data = {"userName": username}
