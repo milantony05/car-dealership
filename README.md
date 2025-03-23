@@ -55,7 +55,7 @@ npm run build
 
 ### Environment setup (Django server)
 ```sh
-cd /home/project/xrwvm-fullstack_developer_capstone/server
+cd car-dealership-project/server
 pip install virtualenv
 virtualenv djangoenv
 source djangoenv/bin/activate
