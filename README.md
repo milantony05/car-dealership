@@ -17,48 +17,48 @@ To set up this project locally, follow these steps:
 
 ### Clone the repository
 ```sh
-git clone https://github.com/milantony05/car-dealership-project.git
+git clone https://github.com/milantony05/car-dealership.git
 ```
 
 ### Navigate to the project directory
 ```sh
-cd car-dealership-project/server
+cd car-dealership/server
 ```
 
 ### Run the Express-MongoDB server (server-side)
 ```sh
-cd car-dealership-project/server/database
+cd car-dealership/server/database
 docker build . -t nodeapp
 docker-compose up
 ```
 Keep the server running in this terminal.
 Launch the application on Port 3030 to obtain the URL.
-Open djangoapp/.env and paste the link beside `backend_url`.
+Open `djangoapp/.env` and paste the link beside `backend_url`.
 
 ### Start the Code Engine for sentiment analysis
 Code Engine Projects are provided by IBM Skills Network.
 ```sh
-cd car-dealership-project/server/djangoapp/microservices
+cd car-dealership/server/djangoapp/microservices
 docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
 docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
 ibmcloud ce application create --name sentianalyzer --image us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer --registry-secret icr-secret --port 5000
 ```
 Connect to the URL that is generated and copy the url.
-Open djangoapp/.env and paste the link beside `sentiment_analyzer_url`.
+Open `djangoapp/.env` and paste the link beside `sentiment_analyzer_url`.
 
 ### Build the client-side
 ```sh
-cd car-dealership-project/server/frontend
+cd car-dealership/server/frontend
 npm install
 npm run build
 ```
 
 ### Environment setup (Django server)
 ```sh
-cd car-dealership-project/server
+cd car-dealership/server
 pip install virtualenv
-virtualenv djangoenv
-source djangoenv/bin/activate
+python3 -m venv djangoenv
+source djangoenv/bin/activate  # On Windows use `djangoenv\Scripts\activate`
 python3 -m pip install -U -r requirements.txt
 python3 manage.py makemigrations
 python3 manage.py migrate
