@@ -32,7 +32,7 @@ docker build . -t nodeapp
 docker-compose up
 ```
 Keep the server running in this terminal.
-Launch the application on Port 3030 to obtain the URL.
+Launch the application on [Port 3030](http://localhost:3030/) to obtain the URL.<br>
 Open `djangoapp/.env` and paste the link beside `backend_url`.
 
 ### Start the Code Engine for sentiment analysis
@@ -43,7 +43,7 @@ docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
 docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
 ibmcloud ce application create --name sentianalyzer --image us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer --registry-secret icr-secret --port 5000
 ```
-Connect to the URL that is generated and copy the url.
+Connect to the URL that is generated and copy the url.<br>
 Open `djangoapp/.env` and paste the link beside `sentiment_analyzer_url`.
 
 ### Build the client-side
@@ -67,7 +67,8 @@ python3 manage.py runserver
 
 ## Usage
 
-After setup, you can access the website through Port 8000.
+After setup, you can access the website through [Port 8000](http://localhost:8000/).<br>
+Admin site: Append `/admin` to the url.
 
 ## Tech Stack
 
