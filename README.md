@@ -85,10 +85,12 @@ This project is built with the following technologies:
 ## System Requirements
 
 - **Operating System:** Windows 10/11, macOS, or Linux
-- **Web Browser:** Chrome, Firefox, Safari, or Edge
-- **Database:** MongoDB 4.0+
-- **Node.js 14+**
-- **Python 3.8+**
+- **Web Browser:** Chrome, Firefox, Safari, or Edge (latest versions)
+- **Backend:** Python 3.8+ (for Django), Node.js 14+ (for Express.js)
+- **Database:** SQLite (for car model and make), MongoDB 4.0+ (for dealers and reviews)
+- **Containerization & Deployment:** Docker, Kubernetes
+- **Cloud Services:** IBM Cloud Code Engine (for sentiment analysis service)
+- **Development Tools:** Git, Cloud IDE (for project setup and deployment)
 
 ## Gallery
 
