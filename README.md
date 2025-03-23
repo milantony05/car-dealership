@@ -67,8 +67,8 @@ python3 manage.py runserver
 
 ## Usage
 
-After setup, you can access the website through [Port 8000](http://localhost:8000/).<br>
-Admin site: Append `/admin` to the url.
+After setup, access the website through [Port 8000](http://localhost:8000/).<br>
+To access the admin site after creating superuser, append `/admin` to the url.
 
 ## Tech Stack
 
