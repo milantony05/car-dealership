@@ -108,5 +108,4 @@ This project is built with the following technologies:
 
 ## Contact
 
-**Milan Tony** - milantony2005@gmail.com <br>
-**Project Link:** [GitHub Repository](https://github.com/milantony05/car-dealership-project)
+**Milan Tony** - milantony2005@gmail.com
