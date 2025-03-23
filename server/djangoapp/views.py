@@ -6,7 +6,6 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 from .models import CarMake, CarModel
-from .restapis import get_request, analyze_review_sentiments, post_review
 from .restapis import get_request, analyze_review_sentiments, post_review, searchcars_request
 
 # Get an instance of a logger
@@ -28,24 +27,23 @@ def get_cars(request):
 
 def get_inventory(request, dealer_id):
     data = request.GET
-    if (dealer_id):
+    if dealer_id:
         if 'year' in data:
-            endpoint = "/carsbyyear/"+str(dealer_id)+"/"+data['year']
+            endpoint = "/carsbyyear/" + str(dealer_id) + "/" + data['year']
         elif 'make' in data:
-            endpoint = "/carsbymake/"+str(dealer_id)+"/"+data['make']
+            endpoint = "/carsbymake/" + str(dealer_id) + "/" + data['make']
         elif 'model' in data:
-            endpoint = "/carsbymodel/"+str(dealer_id)+"/"+data['model']
+            endpoint = "/carsbymodel/" + str(dealer_id) + "/" + data['model']
         elif 'mileage' in data:
-            endpoint = "/carsbymaxmileage/"+str(dealer_id)+"/"+data['mileage']
+            endpoint = "/carsbymaxmileage/" + str(dealer_id) + "/" + data['mileage']
         elif 'price' in data:
-            endpoint = "/carsbyprice/"+str(dealer_id)+"/"+data['price']
+            endpoint = "/carsbyprice/" + str(dealer_id) + "/" + data['price']
         else:
-            endpoint = "/cars/"+str(dealer_id)
- 
+            endpoint = "/cars/" + str(dealer_id)
+
         cars = searchcars_request(endpoint)
         return JsonResponse({"status": 200, "cars": cars})
-    else:
-        return JsonResponse({"status": 400, "message": "Bad Request"})
+
     return JsonResponse({"status": 400, "message": "Bad Request"})
 
 
@@ -102,14 +100,14 @@ def registration(request):
 # Update the `get_dealerships` render list of dealerships all by default,
 # particular state if state is passed
 def get_dealerships(request, state="All"):
-    endpoint = "/fetchDealers" if state == "All" else f"/fetchDealers/{state}"
+    endpoint = "/fetchDealers" if state == "All" else "/fetchDealers/" + state
     dealerships = get_request(endpoint)
     return JsonResponse({"status": 200, "dealers": dealerships})
 
 
 def get_dealer_details(request, dealer_id):
     if dealer_id:
-        endpoint = f"/fetchDealer/{dealer_id}"
+        endpoint = "/fetchDealer/" + str(dealer_id)
         dealership = get_request(endpoint)
         return JsonResponse({"status": 200, "dealer": dealership})
 
@@ -118,7 +116,7 @@ def get_dealer_details(request, dealer_id):
 
 def get_dealer_reviews(request, dealer_id):
     if dealer_id:
-        endpoint = f"/fetchReviews/dealer/{dealer_id}"
+        endpoint = "/fetchReviews/dealer/" + str(dealer_id)
         reviews = get_request(endpoint)
 
         for review_detail in reviews:
