@@ -85,9 +85,10 @@ This project is built with the following technologies:
 ## System Requirements
 
 - **Operating System:** Windows 10/11, macOS, or Linux
-- **Web Browser:** Chrome, Firefox, Safari, or Edge (latest versions)
+- **Web Browser:** Chrome, Firefox, Safari, or Edge
 - **Database:** MongoDB 4.0+
-- **Node.js 14+ / Python 3.8+
+- **Node.js 14+**
+- **Python 3.8+**
 
 ## Gallery
 
@@ -97,7 +98,7 @@ This project is built with the following technologies:
 
 ![3](https://github.com/user-attachments/assets/33912f36-bb0a-47f8-b59c-45ce9e917a44)
 
-![4](https://github.com/user-attachments/assets/c2b97266-5d6f-4c72-97d2-28d70895b374)
+![4](https://github.com/user-attachments/assets/c8769a88-ec40-44ef-b250-103d1b42a2a1)
 
 ![5](https://github.com/user-attachments/assets/0f81f5ff-6194-4098-8297-05d44eecec1c)
 
@@ -107,5 +108,5 @@ This project is built with the following technologies:
 
 ## Contact
 
-**Milan Tony** - milantony2005@gmail.com
+**Milan Tony** - milantony2005@gmail.com <br>
 **Project Link:** [GitHub Repository](https://github.com/milantony05/car-dealership-project)
